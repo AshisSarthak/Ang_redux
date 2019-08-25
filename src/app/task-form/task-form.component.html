@@ -1,0 +1,27 @@
+
+<form class='taskForm'>
+    <div *ngIf="!(selectedTask | async)">
+        <div class="form-group">
+            <label for="taskTitle">Title</label>
+            <input type="text" class="form-control" name="title" id="taskTitle" placeholder="Enter Title" [(ngModel)]="title">
+        </div>
+        <div class="form-group">
+            <label for="taskDetail">Content</label>
+            <textarea class="form-control" id="taskDetail"  name="body" [(ngModel)]="content" rows="3">
+            </textarea>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="createTask()">Create Task</button>
+    </div>
+    <div *ngIf="(selectedTask | async)">
+        <div class="form-group">
+            <label for="taskTitle">Title</label>
+            <input type="text" class="form-control" name="title" id="taskTitle" placeholder="Enter Title" [ngModel]="(selectedTask | async )?.title" (ngModelChange)="title = $event">
+        </div>
+        <div class="form-group">
+            <label for="taskDetail">Content</label>
+            <textarea class="form-control" id="taskDetail"  name="body" [ngModel]="(selectedTask | async)?.content" (ngModelChange)="content = $event" rows="3">
+            </textarea>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="updateTask()">Update Task</button>
+    </div>
+</form>

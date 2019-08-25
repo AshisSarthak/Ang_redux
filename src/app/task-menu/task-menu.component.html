@@ -1,0 +1,6 @@
+<div class='d-flex flex-column' *ngIf="(searchedItems | async)?.length > 0">
+    <div class='menuItems' *ngFor="let item of searchedItems | async" (click)="selectTask(item.id)">
+        <h6>{{item.title}}</h6>
+        <div class='timeStampVal'>{{item.timeStamp}}</div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.app-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    background-color: rgba(33,125,243,0.2);
+
+    & button,input {
+        margin-left: 10px;
+    }
+}
+.tasksBtn{
+    width: 230px;
+}
+.searchSec{
+    width: 60%;
+}

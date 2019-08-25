@@ -1,0 +1,10 @@
+.taskForm {
+    margin-left: 15px;
+}
+input[required=required]:after,
+select[required=required]:after,
+textarea[required=required]:after
+{
+    color: red;
+    content: " *";
+}

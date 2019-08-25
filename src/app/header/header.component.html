@@ -1,0 +1,13 @@
+<header class='app-header'>
+    <h5>Task  List</h5>
+    <section class='d-flex float-right searchSec'>
+        <button class="btn btn-light tasksBtn" type="button" data-toggle="collapse" data-target="#taskMenus" aria-expanded="true" aria-controls="taskMenus">
+            Toggle Tasks
+        </button>
+        <button type="button" class="btn btn-light" *ngIf="(selectedTask | async)" (click)="createMode()">Create</button>
+        <button type="button" class="btn btn-danger" (click)="deleteTask()">Delete</button>
+        <input type="text" [(ngModel)]="searchText" (keyup)="onKey($event)" class="form-control searchBox d-flex flex-row-reverse" aria-label="Search Task" 
+        placeholder="Search Task"
+        >
+    </section>
+</header>
